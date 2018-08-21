@@ -20,4 +20,10 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include FactoryBot::Syntax::Methods
+  config.include Warden::Test::Helpers
+  config.include FeatureMacros, type: :feature
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
+  config.before(:suite) { Warden.test_mode! }
+  config.after(:each) { Warden.test_reset! }
 end
