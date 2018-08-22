@@ -2,5 +2,7 @@ en:
   admin:
     users:
       new:
-        create_user: Create User
+        submit: Create User
+      edit:
+        submit: Update User
 
