@@ -1,5 +1,7 @@
 module Admin
   class UsersController < BaseController
+    before_action :find_user, only: [:edit, :update]
+
     def index
       @users = User.all
     end
@@ -30,10 +32,13 @@ module Admin
       else
         render :edit
       end
-
     end
 
     private
+
+    def find_user
+      @user = User.find params[:id]
+    end
 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
