@@ -1,6 +1,8 @@
 en:
   admin:
     users:
+      index:
+        new: New User
       new:
         submit: Create User
       edit:

@@ -1,0 +1,6 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Application</a>
+  <% if admin_user_signed_in? %>
+    <%= link_to "Log out", destroy_admin_user_session_path, method: :delete, class: "btn btn-link mr-sm-2" %>
+  <% end %>
+</nav>
