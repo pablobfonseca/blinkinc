@@ -33,6 +33,7 @@ end
 group :test do
   gem 'capybara', '~> 3.6'
   gem 'database_cleaner', '~> 1.7'
+  gem 'simplecov', '~> 0.16.1'
 end
 
 
