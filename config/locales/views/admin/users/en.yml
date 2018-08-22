@@ -1,0 +1,6 @@
+en:
+  admin:
+    users:
+      new:
+        create_user: Create User
+
