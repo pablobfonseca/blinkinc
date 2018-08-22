@@ -3,7 +3,7 @@ module Admin
     before_action :find_user, only: [:show, :edit, :update]
 
     def index
-      @users = User.all
+      @users = User.all.page(params[:page])
     end
 
     def show
