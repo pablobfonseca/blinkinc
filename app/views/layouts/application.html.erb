@@ -12,6 +12,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% present(current_account, NavPresenter) do |presenter| %>
+      <%= presenter.render_nav %>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
