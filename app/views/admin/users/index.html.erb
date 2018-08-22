@@ -18,7 +18,10 @@
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
         <td><%= user.created_at %></td>
-        <td><%= link_to "Edit", edit_admin_user_path(user), id: dom_id(user, :edit) %></td>
+        <td>
+          <%= link_to "Edit", edit_admin_user_path(user), id: dom_id(user, :edit) %>
+          <%= link_to "Show", admin_user_path(user), id: dom_id(user, :show) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
