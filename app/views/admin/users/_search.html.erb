@@ -1,0 +1,9 @@
+<%= form_for :q, url: admin_users_path, method: :get do |f| %>
+  <div class="form-group">
+    <div class="col-sm-3">
+      <%= f.search_field :search, placeholder: "Search", class: 'form-control' %>
+    </div>
+  </div>
+  <%= f.submit "Search", class: 'btn btn-default btn-primary' %>
+  <%= link_to "Clear", admin_users_path, class: 'btn btn-secondary' %>
+<% end %>

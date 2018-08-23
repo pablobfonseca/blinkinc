@@ -3,6 +3,8 @@ module Admin
     before_action :find_user, only: [:show, :edit, :update]
 
     def index
+      return perform_search if params[:q].present?
+
       @users = User.all.page(params[:page])
     end
 
@@ -38,6 +40,10 @@ module Admin
     end
 
     private
+
+    def perform_search
+      @users = User.search(params.dig(:q, :search)).page(params[:page])
+    end
 
     def find_user
       @user = User.find params[:id]
